@@ -76,31 +76,6 @@ h4 {
     transform: translateY(-50%); 
 }
 
-/* footer */ 
-.footer {
-    background-color: #ff0000; 
-    padding: 20px; 
-    text-align: center; 
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); 
-}
-
-.footer-container {
-    display: flex; 
-    justify-content: center; 
-    flex-wrap: wrap; 
-    gap: 30px; 
-}
-
-.footer-link {
-    color: #ffffff; 
-    text-decoration: none; 
-    transition: color 0.3s; 
-}
-
-.footer-link:hover {
-    color: #000000;
-}
-
 /* mobile sizes */
 @media screen and (max-width: 912px) {
     .container {
