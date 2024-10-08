@@ -1,17 +1,65 @@
+/* font */
 * {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-h1, 
+/* alpha description */
 h2 {
+    flex: 1; 
+    text-align: left; 
     color: #FF0000;
-    text-align: center;
+}
+
+.header-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.black-text {
+    color: black;
+}
+
+/* youtube logo */
+.alpha-logo {
+    width: 150px; 
+    height: auto; 
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center; 
+}
+
+/* gif */
+.alpha-gif {
+    justify-content: center;
+    border: 3px solid #000000; 
+    border-radius: 12px; 
+
+    max-width: 100%; 
+    height: auto; 
 }
 
 .gif-container {
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
+    justify-content: center; 
+    align-items: center; 
+    padding-top: 20px;
+}
+
+/* boxes */
+.box {
+    flex: 1;
+    background-color: #ebebeb;
+    border-radius: 8px; 
+    padding: 15px 30px 30px 30px;
+    margin: -0.75rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.box:hover {
+    background-color: #e0e0e0;
 }
 
 .container {
@@ -21,26 +69,51 @@ h2 {
     column-gap: 60px;
 }
 
-.box {
-    flex: 1;
-    background-color: #cdcdcd;
-    border-radius: 8px; /* Slightly larger border radius */
-    padding: 15px 30px 30px 30px;
-    margin: -0.75rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+/* link */
+h4 {
+    text-align: center; 
+    position: relative; 
+    transform: translateY(-50%); 
 }
 
-.alpha-gif {
-    justify-content: center; /* Centers the GIF horizontally */
+/* footer */ 
+.footer {
+    background-color: #ff0000; 
+    padding: 20px; 
+    text-align: center; 
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-.black-text {
-    color: black;
+.footer-container {
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 30px; 
 }
 
+.footer-link {
+    color: #ffffff; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+}
+
+.footer-link:hover {
+    color: #000000;
+}
+
+/* mobile sizes */
 @media screen and (max-width: 912px) {
     .container {
         flex-direction: column;
         row-gap: 70px;
+    }
+
+    .footer {
+        padding: 15px; 
+    }
+    
+    .footer-container {
+        flex-direction: column; 
+        row-gap: 10px; 
     }
 }
