@@ -3,6 +3,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ALPHA */
 /* alpha description */
 h2 {
     flex: 1; 
@@ -85,6 +86,7 @@ h4 {
 }
 
 /* ALHPA BUILD */
+/* container */
 .card-container {
     border: 1px solid #d1d8db;
     border-radius: 8px;
@@ -92,21 +94,47 @@ h4 {
     font-family: "Helvetica Neue", Arial, sans-serif;
     padding: 16px;
     box-sizing: border-box;
-    position: relative; /* Allows positioning of child elements */
-    margin: 0 auto; /* Centers the container horizontally */
+    position: relative; 
+    margin: 0 auto; 
 }
 
+/* top of container */
 .card-header {
     display: flex;
-    align-items: center; /* Center items vertically */
-    height: 100px; /* Set a specific height for the header */
+    height: 100px; 
     justify-content: space-between;
 }
 
+.card-header-background {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px; 
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+
+/* close button */
+.close-button {
+    background-color: #6C757D; 
+    border: none;
+    color: white;
+    font-size: 22px;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 8px; 
+    right: 8px; 
+    z-index: 1; 
+}
+
+/* profile picture */
 .profile-picture {
     display: flex;
-    justify-content: center; /* Center the profile picture */
-    padding-top: 30%;
+    padding-top: 25%;
 }
 
 .profile-picture img {
@@ -117,57 +145,35 @@ h4 {
     z-index: 1;
 }
 
-.header-background {
-    position: absolute; /* Position it absolutely within the card container */
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px; /* Set a specific height for the header */
-    width: 100%; /* Fill the width */
-    object-fit: cover; /* Maintain aspect ratio and cover the area */
-    z-index: 0; /* Ensure it's behind other elements */
-    border-radius: 8px 8px 0 0; /* Match the card container's top border radius */
-}
-
-.close-button {
-    background-color: #6C757D; 
-    border: none;
-    color: white;
-    font-size: 22px;
-    border-radius: 50%;
-    width: 26px;
-    height: 26px;
-    position: absolute; /* Position the close button absolutely */
-    top: 8px; /* Distance from the top */
-    right: 8px; /* Distance from the right */
-    z-index: 1; /* Ensure it is above the background */
-}
-
+/* card content */
 .card-content {
     text-align: center;
     margin-top: 16px;
 }
 
+/* jane doe */
 .name {
     font-size: 18px;
     font-weight: bold;
     margin: 8px 0 4px;
 }
 
+/* digital marketing strategist */
 .bio {
     font-size: 14px;
     color: #666;
     margin: 4px 0;
 }
 
+/* mutual connections */
 .mutual-connections {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Aligns items to the left */
-    margin: 16px 0; /* Adjust margin as needed */
+    justify-content: flex-start; 
+    margin: 16px 0; 
     font-size: 12px;
     color: #666;
-    text-align: left; /* Ensures the text is left-aligned */
+    text-align: left; 
 }
 
 .mutual-connections img {
@@ -175,9 +181,10 @@ h4 {
     height: 24px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 8px; /* Space between the image and text */
+    margin-right: 8px; 
 }
 
+/* connect button */
 .connect-button {
     background-color: white;
     border: 2px solid #0073b1;
