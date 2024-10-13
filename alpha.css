@@ -86,7 +86,18 @@ h4 {
 }
 
 /* ALHPA BUILD */
-/* container */
+.alpha-build {
+    color: white; 
+    display: inline-block; 
+}
+
+.highlight {
+    background-color: #0055AA; 
+    padding: 4px; 
+    border-radius: 4px; 
+}
+
+/* microinteraction */
 .card-container {
     border: 1px solid #d1d8db;
     border-radius: 8px;
@@ -102,7 +113,10 @@ h4 {
 .card-header {
     display: flex;
     height: 100px; 
-    justify-content: space-between;
+
+    justify-content: center; /* Ensures all content inside is centered */
+    align-items: center;
+
 }
 
 .card-header-background {
@@ -135,6 +149,7 @@ h4 {
 .profile-picture {
     display: flex;
     padding-top: 25%;
+    justify-content: center;
 }
 
 .profile-picture img {
@@ -194,8 +209,24 @@ h4 {
     padding: 8px 16px;
     border-radius: 24px;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .connect-button:hover {
     background-color: #eef7fc;
+    color: rgba(0, 115, 177, 0.75); /* Darken text color by 25% */
+    border-color: rgba(0, 115, 177, 0.75); /* Darken border color by 25% */
+}
+
+.connect-button.active {
+    background-color: #d0e5f2; /* Slightly darker background on mouse down */
+    color: #005682; /* Darken text color even more */
+    border-color: #005682; /* Darken border color even more */
+    font-weight: bold; /* Ensure font weight remains bold */
+}
+
+.connect-button.pending {
+    background-color: #333; /* Dark gray background */
+    color: #ccc; /* Light gray text */
+    border-color: #ccc; /* Light gray border */
 }
