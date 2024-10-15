@@ -226,6 +226,12 @@ h4 {
     font-weight: bold; 
 }
 
+
+/* hyperlinks */
 a {
     color: #0055AA;
+}
+
+.youtube-link {
+    color: #FF0000;
 }
