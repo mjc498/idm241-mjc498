@@ -3,6 +3,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* hyperlinks */
+a {
+    color: #FF0000;
+}
+
 /* ALPHA */
 /* alpha description */
 h2 {
@@ -224,14 +229,4 @@ h4 {
     color: #0c0d0e; 
     border-color: #0c0d0e; 
     font-weight: bold; 
-}
-
-
-/* hyperlinks */
-a {
-    color: #0055AA;
-}
-
-.youtube-link {
-    color: #FF0000;
 }
