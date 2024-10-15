@@ -3,11 +3,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* hyperlinks */
-a {
-    color: #FF0000;
-}
-
 /* ALPHA */
 /* alpha description */
 h2 {
@@ -80,6 +75,14 @@ h4 {
     text-align: center; 
     position: relative; 
     transform: translateY(-50%); 
+}
+
+a {
+    color: #FF0000;
+}
+
+.linkedin-link {
+    color: #0055AA;
 }
 
 /* tablet sizes */
