@@ -19,152 +19,218 @@
         </div>
     </div>
 
-<!-- link -->
+<!-- LINK -->
     <h4>
         <a href="https://linkedin.com/" target="_blank" class="linkedin-link">https://linkedin.com/</a>
     </h4>
 
-<!-- triggers -->
-<div class="container">
-    <div class="box">
-        <h3>TRIGGERS</h3>
-        <p>Connect - Default</p>
-        <ul>
-            <li>Hover ON</li> 
-            <li>Hover OFF</li> 
-            <li>Mouse Down</li> 
-            <li>Mouse Up</li> 
-        </ul>
+<!-- TRIGGERS -->
+    <div class="container">
+        <div class="box">
+            <h3>TRIGGERS</h3>
 
-        <p>Connect - Active</p>
-        <ul>
-            <li>Hover ON</li> 
-            <li>Hover OFF</li> 
-            <li>Mouse Down</li> 
-            <li>Mouse Up</li> 
-        </ul>
+            <p>Container</p>
+                <ul>
+                    <li>Hover ON</li> 
+                    <li>Hover OFF</li> 
+                </ul>
+
+            <p>Connect - Default</p>
+                <ul>
+                    <li>Hover ON</li> 
+                    <li>Hover OFF</li> 
+                    <li>Mouse Down</li> 
+                    <li>Mouse Up</li> 
+                </ul>
+
+            <p>Connect - Active</p>
+                <ul>
+                    <li>Hover ON</li> 
+                    <li>Hover OFF</li> 
+                    <li>Mouse Down</li> 
+                    <li>Mouse Up</li> 
+                </ul>
+
+            <p>"X" Button</p>
+                <ul>
+                    <li>Hover ON</li> 
+                    <li>Mouse Down</li> 
+                    <li>Mouse Up</li> 
+                </ul>
+
+        </div>
+
+<!-- RULES -->
+        <div class="box">
+            <h3>RULES</h3>
+            <p>Container</p>
+                <ul>
+                    <li>Hover ON</li>
+                        <ul>
+                            <li>Shadow appears at bottom edge of container</li>
+                        </ul>
+                    <li>Hover OFF</li>
+                        <ul>
+                            <li>Shadow disappears at bottom edge of container</li>
+                        </ul>
+                </ul> 
+
+            <p>Connect - Default</p>
+                <ul>
+                    <li>Hover ON</li>
+                        <ul>
+                            <li>Cursor changes to finger</li>
+                            <li>Button opacity changes to 15% blue via slide-in animation</li>
+                        </ul>
+                    <li>Hover OFF</li>
+                        <ul>
+                            <li>Cursor changes back to pointer</li>
+                            <li>Button opacity changes to default white color</li>
+                        </ul>
+                    <li>Mouse Down</li>
+                        <ul>
+                            <li>Button opacity darkens 50% blue</li>
+                            <li>Button outline changes to white</li>
+                            <li>Button text lightens 15% blue</li>
+                        </ul>
+                    <li>Mouse Up</li>
+                        <ul>
+                            <li>Button text changes to "Pending..."</li>    
+                            <li>Button opacity changes to 15% blue via slide-out animation</li>
+                            <li>Button outline and text changes back to default blue</li>
+                            <li>Database record flag set to TRUE</li>
+                        </ul>
+                </ul>
+
+            <p>Connect - Active</p>
+                <ul>
+                    <li>Hover ON</li>
+                        <ul>
+                            <li>Cursor changes to finger</li>
+                            <li>Button opacity changes to 15% blue via slide-out animation</li>
+                        </ul>
+                    <li>Hover OFF</li>                    
+                        <ul>
+                            <li>Cursor changes back to pointer</li>
+                            <li>Button opacity changes to default white color</li>
+                        </ul>
+                    <li>Mouse Down</li>
+                        <ul>
+                            <li>Button opacity darkens 50% blue</li>
+                            <li>Button outline changes to white</li>
+                            <li>Button text lightens 15% blue</li>                  
+                        </ul>
+                    <li>Mouse Up</li>
+                        <ul>
+                            <li>Button text changes back to "+ Connect"</li>    
+                            <li>Button opacity changes to 15% blue via slide-in animation</li>
+                            <li>Button outline and text changes back to default blue</li>
+                            <li>Database record flag set to FALSE</li>
+                        </ul>
+                </ul>
+
+                <p>"X" Button</p>
+                    <ul>
+                        <li>Hover ON</li> 
+                            <ul>
+                                <li>Curser changes to finger</li>
+                                <li>"X" rotates 180 degrees</li>
+                            </ul>
+                        <li>Mouse Down</li> 
+                            <ul>
+                                <li>Button opacity changes to white</li>
+                            </ul>
+                        <li>Mouse Up</li> 
+                            <ul>
+                                <li>Button opacity changes back to default transparency</li>
+                                <li>Button slides to the left then bounces to the right</li>
+                                <li>Container disappears while the new container slides in</li>
+                            </ul>
+                    </ul>
+        </div>
+
+<!-- FEEDBACK -->
+        <div class="box">
+            <h3>FEEDBACK</h3>      
+            
+            <p>Container</p>
+                <ul>
+                    <li>Hover ON</li>
+                        <ul>
+                            <li>Shadow appears at bottom edge of container</li>
+                        </ul>
+                    <li>Hover OFF</li>
+                        <ul>
+                            <li>Shadow disappears at bottom edge of container</li>
+                        </ul>
+                </ul> 
+
+            <p>Connect - Default</p>
+            <ul>
+                <li>Hover ON</li>
+                    <ul>
+                        <li>Cursor changes to finger</li>
+                        <li>Button opacity changes to 15% blue via slide-in animation</li>
+                    </ul>
+                <li>Hover OFF</li>
+                    <ul>
+                        <li>Cursor changes back to pointer</li>
+                        <li>Button opacity changes to default white color</li>
+                    </ul>
+                <li>Mouse Down</li>
+                    <ul>
+                        <li>Button opacity darkens 50% blue</li>
+                        <li>Button outline changes to white</li>
+                        <li>Button text lightens 15% blue</li>
+                    </ul>
+                <li>Mouse Up</li>
+                    <ul>
+                        <li>Button text changes to "Pending..."</li>    
+                        <li>Button opacity changes to 15% blue via slide-out animation</li>
+                        <li>Button outline and text changes back to default blue</li>
+                    </ul>
+            </ul>
+
+            <p>Connect - Active</p>
+            <ul>
+                <li>Hover ON</li>
+                    <ul>
+                        <li>Cursor changes to finger</li>
+                        <li>Button opacity changes to 15% blue via slide-out animation</li>
+                    </ul>
+                <li>Hover OFF</li>                    
+                    <ul>
+                        <li>Cursor changes back to pointer</li>
+                        <li>Button opacity changes to default white color</li>
+                    </ul>
+                <li>Mouse Down</li>
+                    <ul>
+                        <li>Button opacity darkens 50% blue</li>
+                        <li>Button outline changes to white</li>
+                        <li>Button text lightens 15% blue</li>                  
+                    </ul>
+                <li>Mouse Up</li>
+                    <ul>
+                        <li>Button text changes back to "+ Connect"</li>    
+                        <li>Button opacity changes to 15% blue via slide-in animation</li>
+                        <li>Button outline and text changes back to default blue</li>
+                    </ul>
+            </ul>
+        </div>
+
+<!-- LOOPS AND MODES -->
+        <div class="box">
+            <h3>LOOPS &amp; MODES</h3>
+                <p>NONE</p>
+        </div>
     </div>
-
-<!-- rules -->
-    <div class="box">
-        <h3>RULES</h3>
-        <p>Connect - Default</p>
-        <ul>
-            <li>Hover ON</li>
-                <ul>
-                    <li>Cursor changes to finger</li>
-                    <li>Button opacity darkens 15% blue</li>
-                    <li>Button outline and text lightens 25% blue</li>
-                </ul>
-            <li>Hover OFF</li>
-                <ul>
-                    <li>Cursor changes back to pointer</li>
-                    <li>Button opacity changes to default white color</li>
-                    <li>Button outline and text changes to default blue</li>
-                </ul>
-            <li>Mouse Down</li>
-                <ul>
-                    <li>Button opacity changes to light gray</li>
-                    <li>Button outline and text changes to black</li>
-                </ul>
-            <li>Mouse Up</li>
-                <ul>
-                    <li>Button text changes to "Pending..."</li>    
-                    <li>Button opacity changes to 15% blue</li>
-                    <li>Button outline and text lightens 25% blue</li>
-                    <li>Database record flag set to TRUE</li>
-                </ul>
-        </ul>
-
-        <p>Connect - Active</p>
-        <ul>
-            <li>Hover ON</li>
-                <ul>
-                    <li>Cursor changes to finger</li>
-                    <li>Button opacity darkens 15% blue</li>
-                    <li>Button outline and text lightens 25% blue</li>
-                </ul>
-            <li>Hover OFF</li>                    
-                <ul>
-                    <li>Cursor changes back to pointer</li>
-                    <li>Button opacity changes to default white color</li>
-                    <li>Button outline and text changes to default blue</li>
-                </ul>
-            <li>Mouse Down</li>
-                <ul>
-                    <li>Button opacity changes to light gray</li>
-                    <li>Button outline and text changes to black</li>                    </ul>
-            <li>Mouse Up</li>
-                <ul>
-                    <li>Button text changes back to "+ Connect"</li>    
-                    <li>Button opacity changes to 15% blue</li>
-                    <li>Button outline and text lightens 25% blue</li>
-                    <li>Database record flag set to FALSE</li>
-                </ul>
-        </ul>
-    </div>
-
-<!-- feedback -->
-    <div class="box">
-        <h3>FEEDBACK</h3>            <p>Connect - Default</p>
-        <ul>
-            <li>Hover ON</li>
-                <ul>
-                    <li>Cursor changes to finger</li>
-                    <li>Button opacity darkens 15% blue</li>
-                    <li>Button outline and text lightens 25% blue</li>
-                </ul>
-            <li>Hover OFF</li>
-                <ul>
-                    <li>Cursor changes back to pointer</li>
-                    <li>Button opacity changes to default white color</li>
-                    <li>Button outline and text changes to default blue</li>
-                </ul>
-            <li>Mouse Down</li>
-                <ul>
-                    <li>Button opacity changes to light gray</li>
-                    <li>Button outline and text changes to black</li>
-                </ul>
-            <li>Mouse Up</li>
-                <ul>
-                    <li>Button text changes to "Pending..."</li>    
-                    <li>Button opacity changes to 15% blue</li>
-                    <li>Button outline and text lightens 25% blue</li>
-                </ul>
-        </ul>
-
-        <p>Connect - Active</p>
-        <ul>
-            <li>Hover ON</li>
-                <ul>
-                    <li>Cursor changes to finger</li>
-                    <li>Button opacity darkens 15% blue</li>
-                    <li>Button outline and text lightens 25% blue</li>
-                </ul>
-            <li>Hover OFF</li>                    
-                <ul>
-                    <li>Cursor changes back to pointer</li>
-                    <li>Button opacity changes to default white color</li>
-                    <li>Button outline and text changes to default blue</li>
-                </ul>
-            <li>Mouse Down</li>
-                <ul>
-                    <li>Button opacity changes to light gray</li>
-                    <li>Button outline and text changes to black</li>                    </ul>
-            <li>Mouse Up</li>
-                <ul>
-                    <li>Button text changes back to "+ Connect"</li>    
-                    <li>Button opacity changes to 15% blue</li>
-                    <li>Button outline and text lightens 25% blue</li>
-                </ul>
-        </ul>
-    </div>
-
-<!-- loops and modes -->
-    <div class="box">
-        <h3>LOOPS &amp; MODES</h3>
-    </div>
-</div>
     
+<!-- GIFS -->
+    <div class="gif-container">
+        <div class="alpha-gif"><img src="graphics/container.gif" alt="gif 1 of redesigned LinkedIn container"></div>
+        <div class="alpha-gif"><img src="graphics/connect.gif" alt="gif 2 of redesigned LinkedIn connect button"></div>
+        <div class="alpha-gif"><img src="graphics/x.gif" alt="gif 3 of redesigned LinkedIn close button"></div>
+    </div>
+
 </body>
 </html>
