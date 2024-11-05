@@ -25,7 +25,6 @@
     justify-content: center;
     border: 3px solid #000000; 
     border-radius: 12px; 
-
     max-width: 100%; 
     height: auto; 
 }
@@ -108,23 +107,27 @@ a {
     position: relative;
     margin: 0 auto;
     transition: box-shadow 0.3s ease; 
+    overflow: hidden;    
+}
+
+.card-container.active {
+    display: block; 
 }
 
 .card-container:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
-
 .card-header {
     display: flex;
     height: 100px; 
-
     justify-content: center; 
     align-items: center;
-
 }
 
-.card-header-background {
+.card-header-background,
+.card-header-background2,
+.card-header::after {
     position: absolute; 
     top: 0;
     left: 0;
@@ -133,12 +136,37 @@ a {
     width: 100%;
     border-radius: 8px 8px 0 0;
     object-fit: cover;
+    z-index: 0;
+}
+
+.card-header.joshua-doe::after {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    background-color: rgba(190, 209, 114, 0.55); /* #BED172 at 55% opacity */
+    border-radius: 8px 8px 0 0;
+    z-index: 1; 
+}
+
+.card-header::after {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    background-color: rgba(209, 114, 189, 0.2); 
+    border-radius: 8px 8px 0 0;
+    z-index: 1; 
 }
 
 .close-button {
-    background-color: #6C757D;
+    background-color: rgba(255, 255, 255, 0.8);
     border: none;
-    color: white;
+    color: #000000;
     font-size: 22px;
     border-radius: 50%;
     width: 26px;
@@ -146,7 +174,7 @@ a {
     position: absolute;
     top: 8px;
     right: 8px;
-    z-index: 1;
+    z-index: 2;
     cursor: pointer;
     transition: transform 0.3s ease, opacity 0.1s ease; 
 }
@@ -156,13 +184,14 @@ a {
 }
 
 .close-button:active {
-    opacity: 0.5;
+    background-color: #FFFFFF;
 }
 
 .profile-picture {
     display: flex;
     padding-top: 25%;
     justify-content: center;
+    z-index: 2;
 }
 
 .profile-picture img {
@@ -209,8 +238,10 @@ a {
     margin-right: 8px; 
 }
 
-.connect-button {
-    background-color: white;
+
+.connect-button,
+.connect-button.pending {
+    background-color: white; 
     border: 2px solid #0073b1;
     color: #0073b1;
     font-size: 14px;
@@ -220,7 +251,7 @@ a {
     cursor: pointer;
     position: relative;
     overflow: hidden; 
-    transition: border-color 0.3s; 
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s; 
 }
 
 .connect-button::before {
@@ -230,7 +261,7 @@ a {
     left: -100%;
     width: 100%;
     height: 100%;
-    background-color: #D8EFFB;
+    background-color: #D8EFFB; 
     transition: transform 0.3s ease-in-out;
     z-index: 0; 
     border-radius: 24px;
@@ -240,37 +271,18 @@ a {
     transform: translateX(100%); 
 }
 
-.connect-button:active::before {
-    background-color: #0273B1; 
-}
-
 .connect-button span {
     position: relative;
     z-index: 1; 
 }
 
-.connect-button:active {
-    background-color: #0273B1; 
-    color: #CCE3EF;
-    border-color: #0273B1;
-    font-weight: bold;
+.connect-button:active,
+.connect-button.pending:active {
+    background-color: #0073b1 !important; 
+    color: #D8EFFB !important;
+    border-color: #0073B1;
 }
 
-.connect-button.pending {
-    background-color: white;
-    color: #0073b1;
-}
-
-.connect-button.pending::before {
-    background-color: #D8EFFB;
-    transform: translateX(-100%); 
-    transition: transform 0.6s ease-out;
-}
-
-.connect-button.pending span {
-    content: "Pending...";
-    color: #0073b1;
-}
 
 /* BETA */
 .gif-container {
@@ -310,3 +322,41 @@ a {
 }
 
 /* BETA BUILD */
+.connect-button.pending::before {
+    background-color: #D8EFFB;
+    transform: translateX(-100%); 
+}
+
+.connect-button.pending:hover::before {
+    transform: translateX(100%);
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
