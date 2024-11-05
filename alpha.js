@@ -51,8 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
     closeButtons.forEach((button, index) => {
         button.addEventListener('mouseup', () => {
             const currentCard = cardContainers[index];
-            const nextCard = cardContainers[(index + 1) % cardContainers.length]; 
+            const nextCard = cardContainers[(index + 1) % cardContainers.length]; // Get the next card, looping back
             switchCards(currentCard, nextCard);
         });
     });
 });
+

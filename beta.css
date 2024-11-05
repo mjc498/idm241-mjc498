@@ -238,7 +238,6 @@ a {
     margin-right: 8px; 
 }
 
-
 .connect-button,
 .connect-button.pending {
     background-color: white; 
@@ -359,4 +358,28 @@ a {
     100% {
         transform: translateX(0);
     }
+}
+
+.card-header.joshua-doe::after {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    background-color: rgba(190, 209, 114, 0.55); /* Green overlay for Joshua Doe */
+    border-radius: 8px 8px 0 0;
+    z-index: 1; 
+}
+
+.card-header:not(.joshua-doe)::after { /* For other card headers */
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    background-color: rgba(209, 114, 189, 0.2); /* Pinkish overlay for other cards */
+    border-radius: 8px 8px 0 0;
+    z-index: 1; 
 }
