@@ -1,8 +1,10 @@
+/* ------------------------------------------ */
 /* FONTS */
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ------------------------------------------ */
 /* HEADER */
 .header-container {
     display: flex; 
@@ -10,8 +12,13 @@
     align-items: center;
 }
 
-/* LINKEDIN */
-.alpha-logo {
+.highlight {
+    background-color: #0055AA; 
+    padding: 4px; 
+    border-radius: 4px; 
+}
+
+.beta-logo {
     width: 150px; 
     height: auto; 
 }
@@ -21,12 +28,40 @@
     justify-content: center; 
 }
 
-.alpha-gif {
+/* ------------------------------------------ */
+/* LINK */
+.linkedin-link {
+    color: #0055AA;
+}
+
+h4 {
+    text-align: center; 
+    position: relative; 
+    transform: translateY(-50%); 
+}
+
+/* ------------------------------------------ */
+/* BETA */
+.beta-gif {
     justify-content: center;
     border: 3px solid #000000; 
     border-radius: 12px; 
     max-width: 100%; 
     height: auto; 
+}
+
+.beta-gif img {
+    width: 50%;
+    border-radius: 12px;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 4rem;
+    column-gap: 60px;
 }
 
 .gif-container {
@@ -49,25 +84,18 @@
     background-color: #e0e0e0;
 }
 
-.container {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 4rem;
-    column-gap: 60px;
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .beta-gif {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
 }
 
-h4 {
-    text-align: center; 
-    position: relative; 
-    transform: translateY(-50%); 
-}
-
-a {
-    color: #FF0000;
-}
-
-.linkedin-link {
-    color: #0055AA;
+@media screen and (max-width: 767px) {
+    .beta-gif {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -85,23 +113,22 @@ a {
     }
 }
 
-/* ALPHA BUILD */
-.alpha-build {
+/* ------------------------------------------ */
+/* BETA BUILD */
+.beta-build {
     color: white; 
     display: inline-block; 
 }
 
-.highlight {
-    background-color: #0055AA; 
-    padding: 4px; 
-    border-radius: 4px; 
+.card-content {
+    text-align: center;
+    margin-top: 16px;
 }
 
 .card-container {
     border: 1px solid #d1d8db;
     border-radius: 8px;
     width: 200px;
-    font-family: "Helvetica Neue", Arial, sans-serif;
     padding: 16px;
     box-sizing: border-box;
     position: relative;
@@ -139,6 +166,13 @@ a {
     z-index: 0;
 }
 
+.card-header::after {
+    content: ""; 
+    bottom: 0; 
+    background-color: rgba(209, 114, 189, 0.2); 
+    z-index: 1; 
+}
+
 .card-header.joshua-doe::after {
     content: ""; 
     position: absolute;
@@ -146,19 +180,31 @@ a {
     left: 0;
     right: 0;
     bottom: 0; 
-    background-color: rgba(190, 209, 114, 0.55); /* #BED172 at 55% opacity */
+    background-color: rgba(190, 209, 114, 0.55); 
     border-radius: 8px 8px 0 0;
     z-index: 1; 
 }
 
-.card-header::after {
+.card-header.joshua-doe::after {
     content: ""; 
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0; 
-    background-color: rgba(209, 114, 189, 0.2); 
+    background-color: rgba(190, 209, 114, 0.55); 
+    border-radius: 8px 8px 0 0;
+    z-index: 1; 
+}
+
+.card-header:not(.joshua-doe)::after {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    background-color: rgba(209, 114, 189, 0.2);
     border-radius: 8px 8px 0 0;
     z-index: 1; 
 }
@@ -202,11 +248,6 @@ a {
     z-index: 1;
 }
 
-.card-content {
-    text-align: center;
-    margin-top: 16px;
-}
-
 .name {
     font-size: 18px;
     font-weight: bold;
@@ -236,6 +277,11 @@ a {
     border-radius: 50%;
     object-fit: cover;
     margin-right: 8px; 
+}
+
+.connect-button span {
+    position: relative;
+    z-index: 1; 
 }
 
 .connect-button,
@@ -270,11 +316,6 @@ a {
     transform: translateX(100%); 
 }
 
-.connect-button span {
-    position: relative;
-    z-index: 1; 
-}
-
 .connect-button:active,
 .connect-button.pending:active {
     background-color: #0073b1 !important; 
@@ -282,45 +323,6 @@ a {
     border-color: #0073B1;
 }
 
-
-/* BETA */
-.gif-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.alpha-gif {
-    flex: 1 1 30%;
-    max-width: 30%;
-    display: flex;
-    justify-content: center;
-}
-
-.alpha-gif img {
-    width: 50%;
-    border-radius: 12px;
-    max-width: 100%;
-    height: auto;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .alpha-gif {
-        flex: 1 1 45%;
-        max-width: 45%;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .alpha-gif {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-}
-
-/* BETA BUILD */
 .connect-button.pending::before {
     background-color: #D8EFFB;
     transform: translateX(-100%); 
@@ -358,28 +360,4 @@ a {
     100% {
         transform: translateX(0);
     }
-}
-
-.card-header.joshua-doe::after {
-    content: ""; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; 
-    background-color: rgba(190, 209, 114, 0.55); /* Green overlay for Joshua Doe */
-    border-radius: 8px 8px 0 0;
-    z-index: 1; 
-}
-
-.card-header:not(.joshua-doe)::after { /* For other card headers */
-    content: ""; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; 
-    background-color: rgba(209, 114, 189, 0.2); /* Pinkish overlay for other cards */
-    border-radius: 8px 8px 0 0;
-    z-index: 1; 
 }
