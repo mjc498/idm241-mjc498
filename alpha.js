@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const connectButton = document.getElementById("connectButton");
-    const closeButtons = document.querySelectorAll('.close-button'); // Select all close buttons
-    const cardContainers = document.querySelectorAll('.card-container'); // Select all card containers
+    const closeButtons = document.querySelectorAll('.close-button'); 
+    const cardContainers = document.querySelectorAll('.card-container'); 
 
     connectButton.addEventListener("click", () => {
         if (!connectButton.classList.contains("pending")) {
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     closeButtons.forEach((button, index) => {
         button.addEventListener('mouseup', () => {
             const currentCard = cardContainers[index];
-            const nextCard = cardContainers[(index + 1) % cardContainers.length]; // Get the next card, looping back
+            const nextCard = cardContainers[(index + 1) % cardContainers.length]; 
             switchCards(currentCard, nextCard);
         });
     });
