@@ -42,20 +42,28 @@ h4 {
 }
 
 /* ------------------------------------------ */
-/* BETA */
-.beta-gif {
-    justify-content: center;
-    border: 3px solid #000000; 
-    border-radius: 12px; 
-    max-width: 100%; 
-    height: auto; 
+/* FINAL */
+.gif-container {
+    display: flex;
+    flex-wrap: wrap;         
+    justify-content: center;   
+    align-items: center; 
+    gap: 20px;                 
+    padding: 20px;           
 }
 
-.beta-gif img {
-    width: 50%;
-    border-radius: 12px;
-    max-width: 100%;
+.final-gif {
+    border-radius: 12px; 
+    width: 200px;              
+    max-width: 100%; 
     height: auto;
+}
+
+.final-gif img {
+    width: 100%;               
+    height: auto;
+    border-radius: 12px;
+    border: 3px solid #000000; 
 }
 
 .container {
@@ -63,13 +71,6 @@ h4 {
     flex-wrap: nowrap;
     margin: 4rem;
     column-gap: 60px;
-}
-
-.gif-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    padding: 20px;
 }
 
 .box {
@@ -86,16 +87,20 @@ h4 {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .beta-gif {
+    .final-gif {
         flex: 1 1 45%;
-        max-width: 45%;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .beta-gif {
-        flex: 1 1 100%;
-        max-width: 100%;
+    .gif-container {
+        flex-direction: column; 
+        align-items: center;    
+    }
+
+    .final-gif {
+        width: 100%;         
+        max-width: 300px;       
     }
 }
 
@@ -239,6 +244,8 @@ h4 {
     padding-top: 25%;
     justify-content: center;
     z-index: 2;
+    position: relative;
+    display: inline-block;
 }
 
 .profile-picture img {
@@ -247,6 +254,12 @@ h4 {
     border-radius: 50%;
     object-fit: cover;
     z-index: 1;
+    transition: box-shadow 0.3s ease;
+}
+
+.profile-picture img:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+    cursor: pointer;
 }
 
 .name {
