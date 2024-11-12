@@ -350,6 +350,19 @@ h4 {
     }
 }
 
+.fadeOut {
+    animation: fadeOut 0.5s forwards;
+}
+
+.fadeIn {
+    animation: fadeIn 0.5s forwards;
+}
+
+.slideIn {
+    animation: slideIn 0.5s forwards;
+}
+
+
 @keyframes bounce {
     0% {
         transform: translateX(0);
@@ -359,5 +372,23 @@ h4 {
     }
     100% {
         transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

@@ -38,22 +38,26 @@ document.addEventListener("DOMContentLoaded", function () {
     cardContainers[1].style.display = 'none'; 
 
     function switchCards(currentCard, nextCard) {
-        const closeButton = currentCard.querySelector('.close-button');
-        closeButton.style.animation = 'slideOut 0.5s forwards, bounce 0.5s forwards';
-
+        currentCard.classList.add('fadeOut');
+        
         setTimeout(() => {
-            currentCard.style.display = 'none'; 
-            nextCard.style.display = 'block'; 
-            nextCard.style.animation = 'slideIn 0.5s forwards'; 
-        }, 500);
+            currentCard.style.display = 'none';
+            currentCard.classList.remove('fadeOut');
+            
+            nextCard.style.display = 'block';
+            nextCard.classList.add('fadeIn', 'slideIn');
+
+            setTimeout(() => {
+                nextCard.classList.remove('fadeIn', 'slideIn');
+            }, 500); 
+        }, 500); 
     }
 
     closeButtons.forEach((button, index) => {
         button.addEventListener('mouseup', () => {
             const currentCard = cardContainers[index];
-            const nextCard = cardContainers[(index + 1) % cardContainers.length]; 
+            const nextCard = cardContainers[(index + 1) % cardContainers.length];
             switchCards(currentCard, nextCard);
         });
     });
 });
-
