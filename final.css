@@ -57,13 +57,13 @@ h4 {
     width: 200px;              
     max-width: 100%; 
     height: auto;
+    border: 3px solid #000000; 
 }
 
 .final-gif img {
     width: 100%;               
     height: auto;
     border-radius: 12px;
-    border: 3px solid #000000; 
 }
 
 .container {
@@ -86,9 +86,16 @@ h4 {
     background-color: #e0e0e0;
 }
 
+/* RESPONSIVENESS */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .final-gif {
         flex: 1 1 45%;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-gap: 50px; 
     }
 }
 
@@ -104,14 +111,6 @@ h4 {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        grid-gap: 50px; 
-    }
-}
-
 @media screen and (max-width: 912px) {
     .container {
         flex-direction: column;
@@ -120,17 +119,14 @@ h4 {
 }
 
 /* ------------------------------------------ */
-/* BETA BUILD */
+/* FINAL */
 .beta-build {
     color: white; 
     display: inline-block; 
 }
 
-.card-content {
-    text-align: center;
-    margin-top: 16px;
-}
-
+/* ------------------------------------------ */
+/* CONTAINER */
 .card-container {
     border: 1px solid #d1d8db;
     border-radius: 8px;
@@ -191,30 +187,6 @@ h4 {
     z-index: 1; 
 }
 
-.card-header.joshua-doe::after {
-    content: ""; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; 
-    background-color: rgba(190, 209, 114, 0.55); 
-    border-radius: 8px 8px 0 0;
-    z-index: 1; 
-}
-
-.card-header:not(.joshua-doe)::after {
-    content: ""; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; 
-    background-color: rgba(209, 114, 189, 0.2);
-    border-radius: 8px 8px 0 0;
-    z-index: 1; 
-}
-
 .close-button {
     background-color: rgba(255, 255, 255, 0.8);
     border: none;
@@ -239,13 +211,13 @@ h4 {
     background-color: #FFFFFF;
 }
 
+/* ------------------------------------------ */
+/* PROFILE */
 .profile-picture {
     display: flex;
-    padding-top: 25%;
     justify-content: center;
-    z-index: 2;
     position: relative;
-    display: inline-block;
+    padding-top: 25%;
 }
 
 .profile-picture img {
@@ -253,13 +225,46 @@ h4 {
     height: 72px;
     border-radius: 50%;
     object-fit: cover;
-    z-index: 1;
     transition: box-shadow 0.3s ease;
+    z-index: 2;
 }
 
 .profile-picture img:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
     cursor: pointer;
+}
+
+.text-curve {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+.profile-picture:hover .text-curve {
+    opacity: 1;
+}
+
+.text-curve text {
+    fill: white; 
+    font-size: 12px; 
+    font-weight: bold;
+}
+
+.profile-picture:active img {
+    box-shadow: none;
+}
+
+/* ------------------------------------------ */
+/* CONTENT */
+.card-content {
+    text-align: center;
+    margin-top: 16px;
 }
 
 .name {
@@ -286,18 +291,15 @@ h4 {
 }
 
 .mutual-connections img {
-    width: 24px;
+    width: 44px;
     height: 24px;
     border-radius: 50%;
-    object-fit: cover;
     margin-right: 8px; 
+    object-fit: cover;
 }
 
-.connect-button span {
-    position: relative;
-    z-index: 1; 
-}
-
+/* ------------------------------------------ */
+/* CONNECT */
 .connect-button,
 .connect-button.pending {
     background-color: white; 
@@ -322,7 +324,6 @@ h4 {
     height: 100%;
     background-color: #D8EFFB; 
     transition: transform 0.3s ease-in-out;
-    z-index: 0; 
     border-radius: 24px;
 }
 
@@ -330,22 +331,18 @@ h4 {
     transform: translateX(100%); 
 }
 
-.connect-button:active,
-.connect-button.pending:active {
+.connect-button:active {
     background-color: #0073b1 !important; 
     color: #D8EFFB !important;
-    border-color: #0073B1;
 }
 
-.connect-button.pending::before {
-    background-color: #D8EFFB;
-    transform: translateX(-100%); 
+.connect-button span {
+    position: relative;
+    z-index: 1; 
 }
 
-.connect-button.pending:hover::before {
-    transform: translateX(100%);
-}
-
+/* ------------------------------------------ */
+/* ANIMATIONS */
 @keyframes slideOut {
     from {
         transform: translateX(0);
@@ -405,4 +402,44 @@ h4 {
     to {
         opacity: 1;
     }
+}
+
+/* LOADING */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); 
+    z-index: 998; 
+    display: none;
+}
+
+.loading-bar-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%; 
+    height: 4px; 
+    background-color: #D8EFFB; 
+    overflow: hidden;
+    z-index: 999; 
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    display: none; 
+}
+
+.loading-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #0073b1; 
+    animation: loadingBarAnimation 1.5s linear forwards;
+}
+
+.card-container.blurred {
+    filter: blur(5px);
+    pointer-events: none; 
 }
