@@ -231,7 +231,11 @@ h4 {
 
 .profile-picture img:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
-    cursor: pointer;
+     cursor: pointer;
+}
+
+.profile-picture:active img {
+    box-shadow: none;
 }
 
 .text-curve {
@@ -254,10 +258,6 @@ h4 {
     fill: white; 
     font-size: 12px; 
     font-weight: bold;
-}
-
-.profile-picture:active img {
-    box-shadow: none;
 }
 
 /* ------------------------------------------ */
