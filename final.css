@@ -119,7 +119,7 @@ h4 {
 }
 
 /* ------------------------------------------ */
-/* FINAL */
+/* BETA */
 .beta-build {
     color: white; 
     display: inline-block; 
@@ -258,6 +258,15 @@ h4 {
     fill: white; 
     font-size: 12px; 
     font-weight: bold;
+}
+
+@keyframes loadingBarAnimation {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 /* ------------------------------------------ */
